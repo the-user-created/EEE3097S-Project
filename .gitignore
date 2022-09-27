@@ -158,7 +158,7 @@ local.properties
 # STS (Spring Tool Suite)
 .springBeans
 
-# Code Recommenders
+# FPR_Code Recommenders
 .recommenders/
 
 # Annotation Processing

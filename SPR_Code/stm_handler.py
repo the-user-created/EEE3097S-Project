@@ -118,6 +118,7 @@ def main():
             if user_input.lower() == "y":
                 # SEND DATA TO "NEXT" STM FOR DECRYPTION AND DECOMPRESSION
                 write_data(ser, b"GMD")
+                sleep(0.1)
 
                 ### FOR ENCRYPTION BLOCK AND OVERALL FUNCTIONALITY TESTS ###
                 print("PADDING LENGTH CONFIRMATION:")
@@ -142,7 +143,7 @@ def main():
                 # dumphex(compressed_data)
                 # print()
 
-                sleep(0.1)
+                # sleep(0.1)
 
                 ### FOR ENCRYPTION BLOCK AND OVERALL FUNCTIONALITY TESTS ###
                 print("ENCRYPTED DATA CONFIRMATION:")
@@ -193,30 +194,5 @@ def main():
                 break
 
 
-def hex_to_dec(hex_str):
-    return (int(hex_str[0: 2], 16) << 8) + int(hex_str[2: 4], 16)
-
-
-def time_to_dec(hex_str):
-    return int(hex_str[0: 2], 16) + (int(hex_str[2: 4], 16) << 8) + (int(hex_str[4: 6], 16) << 16) + (int(hex_str[6: 8], 16) << 24)
-
-
 if __name__ == '__main__':
-    """output = "ffffffff1f54200009d50200001018e82d4f08001f50ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f383e1508001f602d4f08001f30ffffffff3e1508001f58fff9ffff358a2d4f08001f30"
-
-    for i in range(0, len(output), 44):
-        reading = output[i: i + 44]
-        time_data = time_to_dec(reading[0: 8])
-        accel_x = hex_to_dec(reading[8: 12])
-        accel_y = hex_to_dec(reading[12: 16])
-        accel_z = hex_to_dec(reading[16: 20])
-        gyro_x = hex_to_dec(reading[20: 24])
-        gyro_y = hex_to_dec(reading[24: 28])
-        gyro_z = hex_to_dec(reading[28: 32])
-        magn_x = hex_to_dec(reading[32: 36])
-        magn_y = hex_to_dec(reading[36: 40])
-        magn_z = hex_to_dec(reading[40: 44])
-
-        print(f"{time_data} : {accel_x},{accel_y},{accel_z} : {gyro_x},{gyro_y},{gyro_z} : {magn_x},{magn_y},{magn_z}")"""
-
     main()

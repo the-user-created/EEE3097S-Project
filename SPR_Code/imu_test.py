@@ -48,7 +48,7 @@ def main():
         inter_byte_timeout=0.1
     )
 
-    choice = "magn"
+    choice = "all"
     start_time = time()
     while True:
         data = ser.read(60).replace(b"\x00", b"").replace(b"\n", b"")
@@ -63,8 +63,12 @@ def main():
                 print(f"{int_data[0]},{int_data[1]},{int_data[2]}")
             elif choice == "gyro":
                 print(f"{int_data[3]},{int_data[4]},{int_data[5]}")
-            else:
+            elif choice == "magn":
                 print(f"{int_data[6]},{int_data[7]},{int_data[8]}")
+            else:
+                print(f"{int_data[0]},{int_data[1]},{int_data[2]},"
+                      f"{int_data[3]},{int_data[4]},{int_data[5]},"
+                      f"{int_data[6]},{int_data[7]},{int_data[8]}")
 
 
 if __name__ == '__main__':

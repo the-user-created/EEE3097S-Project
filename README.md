@@ -23,7 +23,9 @@ This repository was used by project group #20.
 
 ### Installing
 
-The final code can be found in the folder `EEE3097S_Project`. The code used for the Simulation Testing can be found in `FPR_Code`. The code used for the Practical Testing can be found in `SPR_Code`. NOTE: the practical testing also used the STM code found in `EEE3097S_Project`.
+The final code can be found in the folder `EEE3097S_Project`. The code used for the Simulation Testing can be found in `FPR_Code`. The code used for the Practical Testing can be found in `SPR_Code`. 
+
+NOTE: the practical testing also used the STM code found in `EEE3097S_Project`.
 
 The folder `SPR_Code` also contains the Python STM handler scripts. The script `stm_handler.py` can be used for a single STM setup for handling the transmission of data between the user and STM. The script `demo.py` was used for demonstrating the overall functionality of the STM for the demo video.
 
